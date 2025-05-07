@@ -61,3 +61,13 @@ body {
         margin-top: 190px;
     }
 }
+@media (min-width: 300px) and (max-width: 500px) {
+    #quiz {
+        font-size: 1rem;
+    }
+
+    #container {
+        overflow: hidden;
+        margin-top: 50px;
+    }
+}
