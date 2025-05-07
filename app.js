@@ -1,3 +1,25 @@
+let date = new Date()
+let time = date.getMinutes()
+let seconds = date.getSeconds()
+console.log(time, seconds);
+
+
+let userName = ""
+const name = Swal.fire({
+    title: "Hey Buddy!",
+    text: "Write your name:",
+    input: 'text',
+    color: "white",
+    showCancelButton: true,
+    customClass: {
+        popup: 'my-swal'
+    }
+}).then((result) => {
+    if (result.value) {
+        console.log("Result: " + result.value);
+        userName = result.value
+    }
+});
 const quizQuestion = [{
     question: "HTML stands for?",
     opt1: "Hyper Text Markup Language",
@@ -14,70 +36,70 @@ const quizQuestion = [{
     opt4: "Computer Style Sheets",
     correct: "Cascading Style Sheets"
 },
-    {
-        question: "Choose the correct HTML element for the largest language",
-        opt1: "h1",
-        opt2: "h6",
-        opt3: "head",
-        opt4: "heading",
+{
+    question: "Choose the correct HTML element for the largest language",
+    opt1: "h1",
+    opt2: "h6",
+    opt3: "head",
+    opt4: "heading",
     correct: "h1"
-    },
-    {
-        question: "How do you write Hello World in an alert box??",
-        opt1: "msg(Hello World)",
-        opt2: "msgBox(Hello World)",
-        opt3: "alertBox(Hello World)",
-        opt4: "alert(Hello World)",
+},
+{
+    question: "How do you write Hello World in an alert box??",
+    opt1: "msg(Hello World)",
+    opt2: "msgBox(Hello World)",
+    opt3: "alertBox(Hello World)",
+    opt4: "alert(Hello World)",
     correct: "alert(Hello World)"
-    },
-    {
-        question: "Which character is used to indicate an end tag?",
-        opt1: "$",
-        opt2: "/",
-        opt3: "_",
-        opt4: "^",
+},
+{
+    question: "Which character is used to indicate an end tag?",
+    opt1: "$",
+    opt2: "/",
+    opt3: "_",
+    opt4: "^",
     correct: "/",
-    },
-    {
-        question: "How to write an IF statement in JavaScript?",
-        opt1: "if i == 5",
-        opt2: "if i = 5",
-        opt3: "if (i == 5)",
-        opt4: "if i === 5",
+},
+{
+    question: "How to write an IF statement in JavaScript?",
+    opt1: "if i == 5",
+    opt2: "if i = 5",
+    opt3: "if (i == 5)",
+    opt4: "if i === 5",
     correct: "if (i == 5)"
-    },
-    {
-        question: "How do you call a function named myFunction?",
-        opt1: "call myFunction",
-        opt2: "myFunction",
-        opt3: "myFunction()",
-        opt4: "call myFunction()",
+},
+{
+    question: "How do you call a function named myFunction?",
+    opt1: "call myFunction",
+    opt2: "myFunction",
+    opt3: "myFunction()",
+    opt4: "call myFunction()",
     correct: "myFunction()"
-    },
-    {
-        question: "How can you add a comment in a JavaScript?",
-        opt1: "//This is a comment",
-        opt2: "/*This is a comment*/",
-        opt3: "<--This is a comment-->",
-        opt4: "`This is a comment`",
+},
+{
+    question: "How can you add a comment in a JavaScript?",
+    opt1: "//This is a comment",
+    opt2: "/*This is a comment*/",
+    opt3: "<--This is a comment-->",
+    opt4: "`This is a comment`",
     correct: "//This is a comment"
-    },
-    {
-        question: "How can you add a comment in a CSS?",
-        opt1: "//This is a comment",
-        opt2: "/*This is a comment*/",
-        opt3: "<--This is a comment-->",
-        opt4: "`This is a comment`",
+},
+{
+    question: "How can you add a comment in a CSS?",
+    opt1: "//This is a comment",
+    opt2: "/*This is a comment*/",
+    opt3: "<--This is a comment-->",
+    opt4: "`This is a comment`",
     correct: "/*This is a comment*/"
-    },
-    {
-        question: "How can you add a comment in a HTML?",
-        opt1: "//This is a comment",
-        opt2: "/*This is a comment*/",
-        opt3: "<--This is a comment-->",
-        opt4: "`This is a comment`",
+},
+{
+    question: "How can you add a comment in a HTML?",
+    opt1: "//This is a comment",
+    opt2: "/*This is a comment*/",
+    opt3: "<--This is a comment-->",
+    opt4: "`This is a comment`",
     correct: "<--This is a comment-->"
-    },
+},
 ];
 const quizContainer = document.getElementById("quiz")
 const btn = document.getElementById("btn")
@@ -86,20 +108,25 @@ let index = 0;
 let score = 0;
 
 function showQuestions() {
+    if (quizQuestion.length - 1 == index) {
+        btn.innerHTML = "Submit"
+    }
     if (quizQuestion.length == index) {
-        quizContainer.innerHTML = `<h1>Quiz Completed</h1> Your Score: ${score} / ${quizQuestion.length}`
+        quizContainer.innerHTML = `<h1> CONGRATULATIONS <br />${userName} 🎉</h1> <br /> Quiz Completed 🎗️ <br /> Your Score: <br /> ${score} /  ${quizQuestion.length}`
+
         Swal.fire({
-            title: "Quiz Completed 🎗️ <br /> Your Score: <br /> " + score + " / " + quizQuestion.length,
-            width: 600,
-            padding: "3em",
-            color: "white",
+            // title: "Quiz Completed 🎗️ <br /> Your Score: <br /> " + score + " / " + quizQuestion.length,
+            width: 0,
+            padding: 0,
+            color: "none",
             background: "none",
+            showConfirmButton: false,
             backdrop: `
-              rgba(0,0,123,0.4)
+            rgba(0,0,123,0.4)
               url("/assets/congratulations.gif")
               center
               no-repeat
-            `
+              `
         });
         btn.style.display = "none"
         previousBtn.style.display = "none"
