@@ -86,18 +86,18 @@ const quizQuestion = [{
 },
 {
     question: "How can you add a comment in a CSS?",
-    opt1: "//This is a comment",
-    opt2: "/*This is a comment*/",
-    opt3: "<--This is a comment-->",
+    opt1: "<--This is a comment-->",
+    opt2: "//This is a comment",
+    opt3: "/*This is a comment*/",
     opt4: "`This is a comment`",
     correct: "/*This is a comment*/"
 },
 {
     question: "How can you add a comment in a HTML?",
-    opt1: "//This is a comment",
+    opt1: "<--This is a comment-->",
     opt2: "/*This is a comment*/",
-    opt3: "<--This is a comment-->",
-    opt4: "`This is a comment`",
+    opt3: "`This is a comment`",
+    opt4: "//This is a comment",
     correct: "<--This is a comment-->"
 },
 ];
