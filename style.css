@@ -1,4 +1,4 @@
-body{
+body {
     background: url(./assets/3d-rendering-questions-background_23-2151455632.avif) fixed no-repeat center center;
     background-size: cover;
     color: white;
@@ -9,9 +9,9 @@ body{
     border-radius: 40% !important;
     background: rgb(104, 58, 148);
     box-shadow: 0px 5px 15px 5px black;
-  }
+}
 
-#container{
+#container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,12 +19,12 @@ body{
     margin-top: 100px;
 }
 
-#quiz{
+#quiz {
     font-size: 2rem;
     line-height: 50px;
 }
 
-.btn{
+.btn {
     padding: 10px;
     margin-top: 20px;
     background-color: rgb(171, 130, 187);
@@ -36,27 +36,28 @@ body{
 
 /* media queries */
 @media screen and (max-width: 850px) {
-    #quiz{
+    #quiz {
         font-size: 1.5rem;
         line-height: 40px;
     }
-    
-    .btn{
+
+    .btn {
         padding: 5px;
         font-size: 1.3rem;
     }
 
-    #container{
+    #container {
         margin-top: 170px;
     }
 }
+
 @media screen and (max-width: 500px) {
-    #quiz{
+    #quiz {
         font-size: 1.3rem;
         line-height: 35px;
     }
 
-    #container{
+    #container {
         margin-top: 190px;
     }
 }

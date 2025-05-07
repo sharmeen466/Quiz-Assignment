@@ -115,18 +115,15 @@ function showQuestions() {
         quizContainer.innerHTML = `<h1> CONGRATULATIONS <br />${userName} 🎉</h1> <br /> Quiz Completed 🎗️ <br /> Your Score: <br /> ${score} /  ${quizQuestion.length}`
 
         Swal.fire({
-            // title: "",
-            // width: 0,
-            // padding: 0,
-            // color: "none",
-            background: "none",
+            background: "transparent",
             showConfirmButton: false,
+            timer: 2000,
             backdrop: `
-            rgba(0,0,123,0.4)
-              url("/assets/congratulations.gif")
+              rgba(0,0,123,0.4)
+              url("./assets/congratulations.gif")
               center
               no-repeat
-              `
+            `
         });
         btn.style.display = "none"
         previousBtn.style.display = "none"
