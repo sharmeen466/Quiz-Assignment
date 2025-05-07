@@ -37,7 +37,7 @@ const quizQuestion = [{
     correct: "Cascading Style Sheets"
 },
 {
-    question: "Choose the correct HTML element for the largest language",
+    question: "Choose the correct HTML element for the largest language?",
     opt1: "h1",
     opt2: "h6",
     opt3: "head",
@@ -45,7 +45,7 @@ const quizQuestion = [{
     correct: "h1"
 },
 {
-    question: "How do you write Hello World in an alert box??",
+    question: "How do you write Hello World in an alert box?",
     opt1: "msg(Hello World)",
     opt2: "msgBox(Hello World)",
     opt3: "alertBox(Hello World)",
@@ -115,10 +115,10 @@ function showQuestions() {
         quizContainer.innerHTML = `<h1> CONGRATULATIONS <br />${userName} 🎉</h1> <br /> Quiz Completed 🎗️ <br /> Your Score: <br /> ${score} /  ${quizQuestion.length}`
 
         Swal.fire({
-            // title: "Quiz Completed 🎗️ <br /> Your Score: <br /> " + score + " / " + quizQuestion.length,
-            width: 0,
-            padding: 0,
-            color: "none",
+            // title: "",
+            // width: 0,
+            // padding: 0,
+            // color: "none",
             background: "none",
             showConfirmButton: false,
             backdrop: `
